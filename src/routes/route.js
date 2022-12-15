@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const userSchema = require("../usermodel/userMongoseData")
 
 router.get('/students/:name', function(req, res) {
     let studentName = req.params.name
@@ -159,5 +160,10 @@ router.post( "/post-query-2", function (req, res){
     res.send( {data: finalArr , status: true})
 })
 
-
+router.post("/userData" , async  function (req,res){
+    let data = req.body
+   let y = await userSchema.create(data)
+    console.log(y);
+    res.send({schemaInformation : y})
+})
 module.exports = router;
