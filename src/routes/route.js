@@ -1,8 +1,20 @@
 const express = require('express');
 const router = express.Router();
 // const UserModel= require("../models/userModel.js")
-const UserController= require("../controllers/authorController")
+const authorController= require("../controllers/authorController")
 const BookController= require("../controllers/bookController")
 
-router.post("/createBook",BookController.createBook)
+//Making Api get/post for author
+
+router.post("/createAuthors",authorController.createAuthors)
+router.get("/getAuthor",authorController.getAuthor)
+
+//Making Api get/Post for book
+router.get("/getBook",BookController.getBook)
+router.post("/createBooks",BookController.createBooks)
+
+
+
+
+
 module.exports = router;

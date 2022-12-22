@@ -1,9 +1,13 @@
-const bookModel =require("../models/bookModel")
+const bookModel = require("../models/bookModel")
 
-
-const createBook = async function(req,res){
+const createBooks = async function (req,res){
     let body = req.body
-   let creation = await bookModel.create(body)
-   return res.send({msg : creation})
+    let creation = await bookModel.create(body)
+    return res.send({msg : creation})
 }
-module.exports.createBook=createBook
+const getBook = async function(req,res){
+    let getBookData = await bookModel.find()
+    return res.send({msg:getBookData})
+}
+module.exports.getBook=getBook
+module.exports.createBooks=createBooks
