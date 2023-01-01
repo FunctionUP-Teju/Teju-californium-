@@ -26,12 +26,12 @@ const runLoop = async (Req,res)=>{
     let finder = await bookmodel.find({price:{$gte :50,$lte :100}})
      let a =[]
     for(i of finder){
-        let objjj=await authorModel.findOne({author_id:(i.author_id)}).select({author_name:1,_id:0})        
+        let objjj=await authorModel.find({author_id:(i.author_id)}).select({author_name:1,_id:0})        
          a.push(i)
          a.push(objjj)
-
+    }
     return res.send({content : a})
-}}
+}
 module.exports.runLoop=runLoop
 module.exports.bookBychetan=bookBychetan
 module.exports.createBook=createBook
