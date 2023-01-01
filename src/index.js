@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
+mongoose.set('strictQuery', false)
 mongoose.connect("mongodb+srv://Teju-Function-Up:rrmWo64wP301WL4O@cluster0.zut3sol.mongodb.net/Book-Creation", {
     useNewUrlParser: true
 })

@@ -1,28 +1,18 @@
 const express = require('express');
 const router = express.Router();
+const BookController= require("../controllers/bookController")
 
-// const UserModel= require("../models/userModel.js")
-const UserController= require("../controllers/userController")
-// const BookController= require("../controllers/bookController")
+//Route handlers consist of all books as per conditions
 
-router.get("/test-me", function (req, res) {
-    res.send("My first ever api!")
-})
+router.post("/createBook", BookController.createBook)
+router.post("/getBooks/search", BookController.specificBook)
+router.get("/getBooks/year/:year" , BookController.bookYears) 
+router.get("/getBooks",BookController.getData)
 
-// router.post("/createUser", UserController.createUser  )
+router.get("/getBooks/INR", BookController.getByINR)
+router.get("/getBooks/available",BookController.available)
 
-// router.get("/getUsersData", UserController.getUsersData)
+//Over ...
 
-router.post("/createBook", UserController.createUser)
-router.post("/updateBooks",UserController.updateBooks)
-router.get("/getAllBooks",UserController.getAllBooks)
-router.get("/bookList", UserController.bookList)
-router.get("/getBooksYear/:year1" , UserController.bookYears)
-router.get("/getParticularBooks",UserController.particularBook)
-router.get("/getXINRBooks", UserController.INRBooks)
-router.get("/getRandomBooks",UserController.randomBook)
-router.post("/updateOneBook",UserController.updateOneBook)
-//MOMENT JS CODE HERE
 
-router.get("/dateManipulation",UserController.dateGate)
 module.exports = router;
