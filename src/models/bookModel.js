@@ -1,5 +1,5 @@
-const mongoose2=require("mongoose")
-const mybookschema= new mongoose2.Schema({
+const mongoose =require("mongoose")
+const mybookschema= new mongoose.Schema({
     
         name:String,
         author_id:{
@@ -8,8 +8,8 @@ const mybookschema= new mongoose2.Schema({
         },
         price:Number,
         ratings:Number,
-    
+        
 
-    })
+    })  
 
-module.exports=mongoose2.model('book', mybookschema)
+module.exports=mongoose.model('book', mybookschema)

@@ -1,5 +1,5 @@
-const mongoose3=require("mongoose")
-const authorschema= new mongoose3.Schema({
+const mongoose=require("mongoose")
+const authorschema= new mongoose.Schema({
     
     author_id:{
     type:Number,
@@ -13,4 +13,4 @@ const authorschema= new mongoose3.Schema({
 
     })
 
-module.exports=mongoose3.model('Author', authorschema)
+module.exports=mongoose.model('author', authorschema)
